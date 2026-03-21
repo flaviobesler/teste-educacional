@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* imagem */
+.gaia {
+  margin-top: 10vh;
+  animation: aparecer 2s ease forwards;
+}
+
+/* botões */
+button {
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  background-color: rgb(49, 109, 238);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* quiz */
+#quiz {
+  display: none;
+  margin-top: 30px;
+}
+
+#opcoes button {
+  display: block;
+  margin: 10px auto;
+}
+
+/* animações */
+.sumir {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="gaia">
+  <img src="atena.jpg" width="200">
+</div>
+
+<audio id="instrucao" src="instrução.mp3"></audio>
+
+<div id="iniciar">
+  <button>Instruções</button>
+</div>
+
+<div id="teste" style="display:none;">
+  <button>Começar Teste</button>
+</div>
+
+<div id="quiz">
+  <h2 id="pergunta"></h2>
+  <div id="opcoes"></div>
+</div>
+
+<script src="teste.js"></script>
+
+</body>
+</html>
