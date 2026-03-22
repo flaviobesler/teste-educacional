@@ -1,134 +1,103 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste educacional</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste Educacional</title>
 
-    <style>
-        body{font-family: 'Inter', sans-serif;
-        
-        }
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        .gaia{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-top: 10vh;
-            
-            animation: gaia 5s ease forwards;
-        }
-        .iniciar, .comecar{
-            display: flex;
-            align-items: center;
-            justify-self: center;
-        }
+/* Container principal */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 320px;
+}
 
-        .iniciar button{
-            margin-top: 50px;
-            width: 200px;
-            height: 50px;
-            background-color: rgb(49, 109, 238);
-            border: solid 1px rgba(231, 226, 226, 0.2);
-            border-radius: 20px;
-            color:white;
-            font-size: 15px;
-            cursor: pointer;
-            animation: aparecer 3s ease forwards; 
-            opacity: 0;
-            animation-delay: 12s;
-        }
+/* Imagem Gaia */
+.gaia img {
+    width: 140px;
+    margin-bottom: 20px;
+    animation: fade 1s ease;
+}
 
-        .nivel{
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px;
-        }
-        .nivel button{
-            width: 50px;
-            height: 30px;
-            background-color: rgb(57, 139, 3);
-            border: solid 1px rgba(231, 226, 226, 0.2);
-            border-radius: 3px;
-            font-size: 20px;
-            animation: gaia 5s ease forwards;
-            
-        }
-        .comecar button{
-           margin-top: 50px;
-            width: 200px;
-            height: 50px;
-            background-color: rgb(49, 109, 238);
-            border: solid 1px rgba(231, 226, 226, 0.2);
-            border-radius: 20px;
-            color:white;
-            font-size: 15px;
-            cursor: pointer;
-            animation: gaia 5s ease forwards;
-            
-        }
-        .iniciar a, .nivel a {
-        text-decoration: none;
-        color: white;}
-        
+/* Níveis */
+.nivel {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
 
-        @keyframes gaia {
-            from{
-                opacity: 0;
-            }
-            to{
-                opacity: 1;
-            }
-            
-        }
+.nivel-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+}
 
-        @keyframes aparecer {
-            from{
-                opacity: 0;
-            }
+/* Botão principal */
+.start {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    background: #316dee;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-            to{
-                opacity: 1;
-            }
-            
-        }
+.start:hover {
+    background: #2556c7;
+}
 
-
-
-
-    </style>
+/* Animação */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
 
 </head>
+
 <body>
 
+<div class="container">
+
     <div class="gaia">
-        <img src="img/atena.jpg" width="200px" height="auto">
+        <img src="img/atena.jpg" alt="Gaia">
     </div>
 
-    <div>
-        <audio src="apresentacao.mp3" id="apresentacao"></audio>
-    </div>
     <div class="nivel">
-        <button><a href="niveis/nivel_1/nivel1.html">1</a></button>
-        <button><a href="niveis/nivel_2/nivel2.html">2</a></button>
-        <button><a href="niveis/nivel_3/nivel3.html">3</a></button>
-        <button><a href="niveis/nivel_4/nivel4.html">4</a></button>
+        <a href="niveis/nivel_1/nivel1.html" class="nivel-btn">1</a>
+        <a href="niveis/nivel_2/nivel2.html" class="nivel-btn">2</a>
+        <a href="niveis/nivel_3/nivel3.html" class="nivel-btn">3</a>
+        <a href="niveis/nivel_4/nivel4.html" class="nivel-btn">4</a>
     </div>
 
-    <div class="comecar" id="iniciar">
-        <button>iniciar</button>
-    </div>
-    
-    <div class="iniciar" id="comecar">
-        <button><a href="niveis/teste/teste.html">começar?</a></button>
-    </div>
+    <button class="start">Iniciar</button>
 
-    
+</div>
 
+<audio src="apresentacao.mp3" id="apresentacao"></audio>
 
+<script src="index.js"></script>
 
-    <script src="index.js"></script>
 </body>
 </html>
