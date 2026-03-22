@@ -116,7 +116,7 @@ botao.onclick= () => {
       botao.classList.remove('fade-out');
       botao.classList.add('fade-in');
       pronto = true;
-    },1000);
+    },26000);
   }
   else{
     botao.classList.remove('fade-in');
