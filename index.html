@@ -14,6 +14,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    animation: fade 1s ease forwards;
 }
 
 /* Container principal */
@@ -30,7 +31,7 @@ body {
 .gaia img {
     width: 140px;
     margin-bottom: 20px;
-    animation: fade 1s ease;
+    
 }
 
 /* Níveis */
@@ -39,6 +40,7 @@ body {
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
+    
 }
 
 .nivel-btn {
@@ -61,10 +63,23 @@ body {
     border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
+    
+
+
 }
 
 .start:hover {
     background: #2556c7;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 /* Animação */
@@ -91,7 +106,7 @@ body {
         <a href="niveis/nivel_4/nivel4.html" class="nivel-btn">4</a>
     </div>
 
-    <button class="start">Iniciar</button>
+    <button class="start">introdução</button>
 
 </div>
 

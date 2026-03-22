@@ -6,74 +6,131 @@
 <title>Teste</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
+  body{
+    font-family: 'arial', sans-serif;
+    animation: fade 1s ease forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-/* imagem */
-.gaia {
+  }
+
+.conteiner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   margin-top: 10vh;
-  animation: aparecer 2s ease forwards;
-}
-
-/* botões */
-button {
-  margin-top: 20px;
-  width: 200px;
-  height: 50px;
-  background-color: rgb(49, 109, 238);
-  border: none;
+  transition: box-shadow 0.5s ease; /* animação da sombra */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   border-radius: 10px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+  width: 300px;
 }
 
-/* quiz */
-#quiz {
-  display: none;
-  margin-top: 30px;
-}
+  .botao, .gaia{
+    margin: 10px;
+  }
+  .botao button{
+    border: none;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #316dee;
+    color: white;
+    font-size: 17px;
+  }
 
-#opcoes button {
-  display: block;
-  margin: 10px auto;
-}
 
-/* animações */
-.sumir {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
 
-@keyframes aparecer {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s;
+    
+  }
+  .teste{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .opcoes{
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #316dee;
+    color: white;
+    font-size: 12px;
+    margin: 5px;
+  }
+
+  .selecionado{
+ 
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #da1608 !important;
+    color: white;
+    font-size: 12px;
+    margin: 5px;
+  }
+
+  #proxima{
+    border: none;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #08be2f;
+    color: white;
+    font-size: 17px;
+  
+  
+  }
+
+  @keyframes fade {
+    from{ opacity: 0;}
+    to{opacity: 1;}
+  }
+  @keyframes transformacao {
+    
+    
+  }
+
 </style>
 
 </head>
 <body>
 
-<div class="gaia">
-  <img src="atena.jpg" width="200">
+<div class="conteiner">
+  
+  <div class="gaia">
+    <img src="atena.jpg" width="200">
+  </div>
+
+  <div class="botao">
+    <button id="botao">instruções</button>
+  </div>
+
+  <audio id="introducao" src="instrução.mp3"></audio>
+
+  <div class="teste">
+    <p id="texto"></p>
+    <div id="botoesOpcao">
+      <div id="option1"></div>
+      <div id="option2"></div>
+    </div>
+    <button id="proxima">proxima</button>
+  </div>
+
 </div>
 
-<audio id="instrucao" src="instrução.mp3"></audio>
-
-<div id="iniciar">
-  <button>Instruções</button>
-</div>
-
-<div id="teste" style="display:none;">
-  <button>Começar Teste</button>
-</div>
-
-<div id="quiz">
-  <h2 id="pergunta"></h2>
-  <div id="opcoes"></div>
-</div>
 
 <script src="teste.js"></script>
 

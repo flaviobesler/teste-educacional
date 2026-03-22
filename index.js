@@ -1,19 +1,24 @@
-console.log('js carregou')
+const botao = document.querySelector(".start");
 
-const btniniciar = document.getElementById('iniciar');
-const btncomecar = document.getElementById('comecar');
+let pronto = false
 
-btncomecar.style.display = 'none';
-
-btniniciar.addEventListener('click', () =>{
-    btniniciar.style.display = 'none';
-    btncomecar.style.display = 'block';
-
-    const audio = document.getElementById("apresentacao");
-    audio.play().catch(() => {
-      console.log("Autoplay bloqueado");
+botao.onclick = () => {
+    document.getElementById("apresentacao").play();
     
-    });
+  if(!pronto){
+    botao.classList.add("fade-out");
 
-})
+    setTimeout(()=>{
+      botao.textContent = "iniciar";
+      botao.classList.remove("fade-out");
+      botao.classList.add("fade-in");
+
+      pronto = true;
+    },24000);}
+    else{
+      window.location.href = '/niveis/teste/teste.html'
+    }
+    
+
+};
 
