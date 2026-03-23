@@ -6,102 +6,90 @@
 <title>Teste</title>
 
 <style>
-  body{
-    font-family: 'arial', sans-serif;
-    animation: fade 1s ease forwards;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body{
+  font-family: arial;
+  display: flex;
+  justify-content: center;
+}
 
-  }
-
-.conteiner {
-  position: relative;
+.conteiner{
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   margin-top: 10vh;
-  transition: box-shadow 0.5s ease; /* animação da sombra */
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   border-radius: 10px;
   width: 300px;
 }
 
-  .botao, .gaia{
-    margin: 10px;
-  }
-  .botao button{
-    border: none;
-    width: 300px;
-    height: 60px;
-    border-radius: 10px;
-    background-color: #316dee;
+.fade-out{opacity:0;transition:0.5s;}
+.fade-in{opacity:1;transition:0.5s;}
+
+.opcoes{
+  width:100px;
+  height:40px;
+  margin:5px;
+  border:none;
+  border-radius:10px;
+  background:#316dee;
+  color:#fff;
+}
+
+.selecionado{
+  background:#da1608;
+}
+
+#proxima{
+  width:300px;
+  height:60px;
+  margin-top:10px;
+  background:#08be2f;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+}
+
+.teste{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.nivel{
+  display:flex;
+  gap:10px;
+}
+#botao, #button{
+
+  border: none;
+  width: 300px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #316dee;
+  color: white;
+  font-size: 17px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.nivel a{
+  background: #4CAF50;
     color: white;
-    font-size: 17px;
-  }
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nivel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 
 
-  .fade-out {
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
 
-  .fade-in {
-    opacity: 1;
-    transition: opacity 0.5s;
-    
-  }
-  .teste{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .opcoes{
-    border: none;
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #316dee;
-    color: white;
-    font-size: 12px;
-    margin: 5px;
-  }
 
-  .selecionado{
- 
-    border: none;
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #da1608 !important;
-    color: white;
-    font-size: 12px;
-    margin: 5px;
-  }
-
-  #proxima{
-    border: none;
-    width: 300px;
-    height: 60px;
-    border-radius: 10px;
-    background-color: #08be2f;
-    color: white;
-    font-size: 17px;
-  
-  
-  }
-
-  @keyframes fade {
-    from{ opacity: 0;}
-    to{opacity: 1;}
-  }
-  @keyframes transformacao {
-    
-    
-  }
 
 </style>
 
@@ -109,28 +97,33 @@
 <body>
 
 <div class="conteiner">
-  
-  <div class="gaia">
-    <img src="atena.jpg" width="200">
-  </div>
 
-  <div class="botao">
-    <button id="botao">instruções</button>
-  </div>
+<img src="atena.jpg" width="200">
 
-  <audio id="introducao" src="instrução.mp3"></audio>
+<button id="botao">instruções</button>
 
-  <div class="teste">
-    <p id="texto"></p>
-    <div id="botoesOpcao">
-      <div id="option1"></div>
-      <div id="option2"></div>
-    </div>
-    <button id="proxima">proxima</button>
-  </div>
+<audio id="introducao" src="instrução.mp3"></audio>
 
+<div class="teste">
+  <p id="texto"></p>
+  <div id="option1"></div>
+  <div id="option2"></div>
+  <button id="proxima">próxima</button>
 </div>
 
+<div id="res1">
+  <h2 id="title1"></h2>
+  <p id="resulte"></p>
+  <button id="button"></button>
+  <div id="levels" class="nivel">
+    <a href="nivel_1/nivel1.html">1</a>
+    <a href="nivel_2/nivel2.html">2</a>
+    <a href="nivel_3/nivel3.html">3</a>
+    <a href="nivel_4/nivel4.html">4</a>
+  </div>
+</div>
+
+</div>
 
 <script src="teste.js"></script>
 
